@@ -2,6 +2,8 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import RemoveIcon from "@mui/icons-material/Remove";
 import SendIcon from "@mui/icons-material/Send";
+import { toast } from "react-toastify";
+
 
 import {
   Accordion,
@@ -42,6 +44,8 @@ const BlogPost = ({ blogData, updatePosts }) => {
       });
       setComments((prev) => ({ ...prev, [blogId]: "" }));
       updatePosts();
+      toast.success("Comment added successfully !")
+
     } catch (error) {
       console.log(error);
     }
@@ -63,6 +67,7 @@ const BlogPost = ({ blogData, updatePosts }) => {
         }
       );
       updatePosts();
+      toast.error("Comment deleted !")
     } catch (error) {
       console.log(error);
     }

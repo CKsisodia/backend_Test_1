@@ -1,5 +1,7 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+
 
 const BlogForm = ({updatePosts}) => {
   const [formData, setFormData] = useState({
@@ -27,6 +29,7 @@ const BlogForm = ({updatePosts}) => {
         body: JSON.stringify(formData),
       });
       updatePosts()
+      toast.success("Blog created successfully !")
     } catch (error) {
       console.log(error);
     }
