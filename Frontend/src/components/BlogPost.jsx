@@ -67,7 +67,7 @@ const BlogPost = ({ blogData, updatePosts }) => {
         }
       );
       updatePosts();
-      toast.error("Comment deleted !")
+      toast.success("Comment deleted !")
     } catch (error) {
       console.log(error);
     }

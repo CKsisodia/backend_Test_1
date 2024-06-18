@@ -7,7 +7,7 @@ const app = express();
 const sequelize = require("./utils/database");
 const blogRoutes = require("./routes/blog");
 
-app.use(bodyParser.json({ exteded: true }));
+app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/blog", blogRoutes);
