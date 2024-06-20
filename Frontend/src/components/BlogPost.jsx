@@ -21,6 +21,7 @@ import {
 import React, { useState } from "react";
 
 const BlogPost = ({ blogData, updatePosts }) => {
+
   const [expanded, setExpanded] = useState([]);
   const [comments, setComments] = useState({});
 
@@ -75,7 +76,7 @@ const BlogPost = ({ blogData, updatePosts }) => {
 
   return (
     <>
-      {blogData ? (
+      {blogData !== null && blogData?.length !==0 ? (
         blogData?.map((blog) => {
           return (
             <Accordion
